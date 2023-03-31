@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>LOGIN</title>
+	</head>
+	<body>
+		<h2>WELCOME TO OUR WEBSITE</h2>
+		<script>
+			var password = document.getElementById("password")
+			var confirm_password = document.getElementById("confirm_password");
+			function validatePassword(){
+				if(password.value != confirm_password.value) {
+    					confirm_password.setCustomValidity("Passwords Don't Match");
+  				} else {
+    					confirm_password.setCustomValidity('');
+  				}
+			}
+			password.onchange = validatePassword;
+			confirm_password.onkeyup = validatePassword;
+		</script>
+		<form>
+			<p>EMAIL: <input id ="email" type="email" size="65" name="EMAIL" required/></p><br>
+			<p>PASSWORD:<input type="password" placeholder="Password" id="password" required/> </p><br>
+			<p>CONFIRM PASSWORD:<input type="password" placeholder="Confirm Password" id="confirm_password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*?[0-9])(?=.*?[!@#$%^&*+`~=?\|<>/]).{8,}"/></p><br>
+			<a href="FORM.HTML"><input type="button" value="SUBMIT"/></a>
+		</form>
+	</body>
+</html>
